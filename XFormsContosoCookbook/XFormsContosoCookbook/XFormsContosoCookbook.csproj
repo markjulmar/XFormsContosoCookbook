@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BCA4A7C1-B6D4-43E9-B600-3AF0FAE6C4EB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XFormsContosoCookbook</RootNamespace>
+    <AssemblyName>XFormsContosoCookbook</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="Components\LocalImagePathConverter.cs" />
+    <Compile Include="Components\ListConverter.cs" />
+    <Compile Include="Components\TrimLabelEffect.cs" />
+    <Compile Include="DataModel\Recipe.cs" />
+    <Compile Include="DataModel\RecipeGroup.cs" />
+    <Compile Include="DataModel\RecipeViewModel.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecipePage.xaml.cs">
+      <DependentUpon>RecipePage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.3.193\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.3.193\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.Forms.2.3.3.193\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataModel\RecipeData.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="images\chinese\Chinese_1_150_C.jpg" />
+    <EmbeddedResource Include="images\chinese\Chinese_1_600_C.jpg" />
+    <EmbeddedResource Include="images\chinese\Chinese_2_150_C.jpg" />
+    <EmbeddedResource Include="images\chinese\Chinese_2_600_C.jpg" />
+    <EmbeddedResource Include="images\chinese\Chinese_3_150_C.jpg" />
+    <EmbeddedResource Include="images\chinese\Chinese_3_600_C.jpg" />
+    <EmbeddedResource Include="images\chinese\Chinese_4_150_C.jpg" />
+    <EmbeddedResource Include="images\chinese\Chinese_4_600_C.jpg" />
+    <EmbeddedResource Include="images\chinese\Chinese_5_150_C.jpg" />
+    <EmbeddedResource Include="images\chinese\Chinese_5_600_C.jpg" />
+    <EmbeddedResource Include="images\chinese\Chinese_6_150_C.jpg" />
+    <EmbeddedResource Include="images\chinese\Chinese_6_310_C.jpg" />
+    <EmbeddedResource Include="images\chinese\Chinese_6_600_C.jpg" />
+    <EmbeddedResource Include="images\chinese\chinese_group.png" />
+    <EmbeddedResource Include="images\chinese\chinese_group_detail.png" />
+    <EmbeddedResource Include="images\chinese\chinese_group_header.png" />
+    <EmbeddedResource Include="images\french\French_1_150_C.jpg" />
+    <EmbeddedResource Include="images\french\French_1_600_C.jpg" />
+    <EmbeddedResource Include="images\french\French_2_150_C.jpg" />
+    <EmbeddedResource Include="images\french\French_2_310_C.jpg" />
+    <EmbeddedResource Include="images\french\French_2_600_C.jpg" />
+    <EmbeddedResource Include="images\french\French_3_150_C.jpg" />
+    <EmbeddedResource Include="images\french\French_3_600_C.jpg" />
+    <EmbeddedResource Include="images\french\French_4_150_C.jpg" />
+    <EmbeddedResource Include="images\french\French_4_600_C.jpg" />
+    <EmbeddedResource Include="images\french\French_5_150_C.jpg" />
+    <EmbeddedResource Include="images\french\French_5_600_C.jpg" />
+    <EmbeddedResource Include="images\french\French_6_150_C.jpg" />
+    <EmbeddedResource Include="images\french\French_6_600_C.jpg" />
+    <EmbeddedResource Include="images\french\french_group.png" />
+    <EmbeddedResource Include="images\french\french_group_detail.png" />
+    <EmbeddedResource Include="images\french\french_group_header.png" />
+    <EmbeddedResource Include="images\german\German_1_150_C.jpg" />
+    <EmbeddedResource Include="images\german\German_1_600_C.jpg" />
+    <EmbeddedResource Include="images\german\German_2_150_C.jpg" />
+    <EmbeddedResource Include="images\german\German_2_600_C.jpg" />
+    <EmbeddedResource Include="images\german\German_3_150_C.jpg" />
+    <EmbeddedResource Include="images\german\German_3_600_C.jpg" />
+    <EmbeddedResource Include="images\german\German_4_150_C.jpg" />
+    <EmbeddedResource Include="images\german\German_4_310_C.jpg" />
+    <EmbeddedResource Include="images\german\German_4_600_C.jpg" />
+    <EmbeddedResource Include="images\german\German_5_150_C.jpg" />
+    <EmbeddedResource Include="images\german\German_5_600_C.jpg" />
+    <EmbeddedResource Include="images\german\German_6_150_C.jpg" />
+    <EmbeddedResource Include="images\german\German_6_600_C.jpg" />
+    <EmbeddedResource Include="images\german\german_group.png" />
+    <EmbeddedResource Include="images\german\german_group_detail.png" />
+    <EmbeddedResource Include="images\german\german_group_header.png" />
+    <EmbeddedResource Include="images\indian\Indian_1_150_C.jpg" />
+    <EmbeddedResource Include="images\indian\Indian_1_600_C.jpg" />
+    <EmbeddedResource Include="images\indian\Indian_2_150_C.jpg" />
+    <EmbeddedResource Include="images\indian\Indian_2_600_C.jpg" />
+    <EmbeddedResource Include="images\indian\Indian_3_150_C.jpg" />
+    <EmbeddedResource Include="images\indian\Indian_3_600_C.jpg" />
+    <EmbeddedResource Include="images\indian\Indian_4_150_C.jpg" />
+    <EmbeddedResource Include="images\indian\Indian_4_600_C.jpg" />
+    <EmbeddedResource Include="images\indian\Indian_5_150_C.jpg" />
+    <EmbeddedResource Include="images\indian\Indian_5_600_C.jpg" />
+    <EmbeddedResource Include="images\indian\Indian_6_150_C.jpg" />
+    <EmbeddedResource Include="images\indian\Indian_6_600_C.jpg" />
+    <EmbeddedResource Include="images\indian\indian_group.png" />
+    <EmbeddedResource Include="images\indian\indian_group_detail.png" />
+    <EmbeddedResource Include="images\indian\indian_group_header.png" />
+    <EmbeddedResource Include="images\italian\Italian_1_150_C.jpg" />
+    <EmbeddedResource Include="images\italian\Italian_1_600_C.jpg" />
+    <EmbeddedResource Include="images\italian\Italian_2_150_C.jpg" />
+    <EmbeddedResource Include="images\italian\Italian_2_600_C.jpg" />
+    <EmbeddedResource Include="images\italian\Italian_3_150_C.jpg" />
+    <EmbeddedResource Include="images\italian\Italian_3_600_C.jpg" />
+    <EmbeddedResource Include="images\italian\Italian_4_150_C.jpg" />
+    <EmbeddedResource Include="images\italian\Italian_4_310_C.jpg" />
+    <EmbeddedResource Include="images\italian\Italian_4_600_C.jpg" />
+    <EmbeddedResource Include="images\italian\Italian_5_150_C.jpg" />
+    <EmbeddedResource Include="images\italian\Italian_5_310_C.jpg" />
+    <EmbeddedResource Include="images\italian\Italian_5_600_C.jpg" />
+    <EmbeddedResource Include="images\italian\Italian_6_150_C.jpg" />
+    <EmbeddedResource Include="images\italian\Italian_6_600_C.jpg" />
+    <EmbeddedResource Include="images\italian\italian_group.png" />
+    <EmbeddedResource Include="images\italian\italian_group_detail.png" />
+    <EmbeddedResource Include="images\italian\italian_group_header.png" />
+    <EmbeddedResource Include="images\mexican\Mexican_1_150_C.jpg" />
+    <EmbeddedResource Include="images\mexican\Mexican_1_600_C.jpg" />
+    <EmbeddedResource Include="images\mexican\Mexican_2_150_C.jpg" />
+    <EmbeddedResource Include="images\mexican\Mexican_2_600_C.jpg" />
+    <EmbeddedResource Include="images\mexican\Mexican_3_150_C.jpg" />
+    <EmbeddedResource Include="images\mexican\Mexican_3_600_C.jpg" />
+    <EmbeddedResource Include="images\mexican\Mexican_4_150_C.jpg" />
+    <EmbeddedResource Include="images\mexican\Mexican_4_600_C.jpg" />
+    <EmbeddedResource Include="images\mexican\Mexican_5_150_C.jpg" />
+    <EmbeddedResource Include="images\mexican\Mexican_5_600_C.jpg" />
+    <EmbeddedResource Include="images\mexican\Mexican_6_150_C.jpg" />
+    <EmbeddedResource Include="images\mexican\Mexican_6_600_C.jpg" />
+    <EmbeddedResource Include="images\mexican\mexican_group.png" />
+    <EmbeddedResource Include="images\mexican\mexican_group_detail.png" />
+    <EmbeddedResource Include="images\mexican\mexican_group_header.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RecipePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

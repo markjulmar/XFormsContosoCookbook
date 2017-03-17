@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:local="clr-namespace:XFormsContosoCookbook.Components;assembly=XFormsContosoCookbook"
+             x:Class="XFormsContosoCookbook.MainPage"
+			 ItemsSource="{Binding RecipeGroups}"
+			 Title="Contoso Cookbook">
+
+	<TabbedPage.Resources>
+		<ResourceDictionary>
+			<local:LocalImagePathConverter x:Key="LocalImagePathConverter" />
+		</ResourceDictionary>
+	</TabbedPage.Resources>
+
+	<TabbedPage.ItemTemplate>
+		<DataTemplate>
+			<ContentPage Title="{Binding Title}">
+				<ListView ItemsSource="{Binding Recipes}" ItemTapped="OnItemTapped">
+					<ListView.RowHeight>
+						<OnPlatform x:TypeArguments="x:Int32" iOS="128" Android="136" WinPhone="144" />
+					</ListView.RowHeight>
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+								<Grid Padding="8">
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition>
+											<ColumnDefinition.Width>
+												<OnPlatform x:TypeArguments="GridLength" iOS="120" Android="144" WinPhone="144" />
+											</ColumnDefinition.Width>
+										</ColumnDefinition>
+										<ColumnDefinition Width="*" />
+									</Grid.ColumnDefinitions>
+									<Image Source="{Binding ImagePath, Converter={StaticResource LocalImagePathConverter}}" />
+									<Grid Grid.Column="1">
+										<Grid.RowDefinitions>
+											<RowDefinition Height="Auto" />
+											<RowDefinition Height="*" />
+										</Grid.RowDefinitions>
+										<Grid.Padding>
+											<OnPlatform x:TypeArguments="Thickness" iOS="4,8,0,8" Android="8,2,0,4" WinPhone="12,-2,0,-4" />
+										</Grid.Padding>
+										<Grid.RowSpacing>
+											<OnPlatform x:TypeArguments="x:Double" iOS="0" Android="4" WinPhone="4" />
+										</Grid.RowSpacing>
+										<Label Text="{Binding Subtitle}" FontSize="Large" LineBreakMode="WordWrap" />
+                                        <Label Text="{Binding Description}" FontSize="Small" Grid.Row="1">
+                                            <Label.Effects>
+                                                <local:TrimLabelEffect />
+                                            </Label.Effects>
+                                        </Label>
+									</Grid>
+								</Grid>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+			</ContentPage>
+		</DataTemplate>
+	</TabbedPage.ItemTemplate>
+</TabbedPage>
